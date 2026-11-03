@@ -1,0 +1,17 @@
+name: Build iOS dylib
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Compile dylib for iOS
+      run: |
+        xcrun clang -dynamiclib -arch arm64 source.c -o mytweak.dylib
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ios-dylib
+        path: *.dylib
