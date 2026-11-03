@@ -1,4 +1,4 @@
-name: Build iOS Dylib
+name: Build ios Dylib
 
 on: [push]
 
@@ -14,4 +14,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ios-dylib
-        path: *.dylib
+        path: "*.dylib"
